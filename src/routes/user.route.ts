@@ -1,7 +1,13 @@
 import { Router, Request, Response } from 'express';
-import StatusGetController from '../controllers/StatusGetController';
+import { LoginController } from '../controllers/user/LoginController';
+import { RegisterUserController } from '../controllers/user/RegisterUserController';
 
 export const register = (router: Router) => {
-  const statusGetController: StatusGetController = new StatusGetController();
-  router.get('/status', (req: Request, res: Response) => statusGetController.run(req, res));
+  const loginController: LoginController = new LoginController();
+  router.post('/login', (req: Request, res: Response) => loginController.run(req, res));
+ 
+ 
+  const registerUserController: RegisterUserController = new RegisterUserController();
+  router.post('/users', (req: Request, res: Response) => registerUserController.run(req, res));
 };
+

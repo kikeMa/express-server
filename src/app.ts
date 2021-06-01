@@ -18,7 +18,8 @@ const morganLogger = morgan({
       write: function(str: any) { logger.info(str); }
     }
   }) 
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use( morganLogger )
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());

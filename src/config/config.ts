@@ -14,6 +14,11 @@ const convictConfig = convict({
       env: 'MONGO_URL',
       default: 'mongodb://localhost:27017/prod'
     }
+  },
+  TOKEN_SECRET: {
+    doc: 'The jwt secret key.',
+    default: 'asdfasdfcverrydyghidyu-.dhgjdghj-ekrmdghjc-djhgdghjd-djhgdjh',
+    env: 'TOKEN_SECRET'
   }
 });
 
