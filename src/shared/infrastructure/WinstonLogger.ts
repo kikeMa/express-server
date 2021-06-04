@@ -1,5 +1,7 @@
 import Logger from '../domain/Logger';
 import winston, { Logger as WinstonLoggerType } from 'winston';
+import MorganLogger from "./MorganLogger";
+
 
 enum Levels {
   DEBUG = 'debug',
@@ -32,6 +34,12 @@ class WinstonLogger implements Logger {
   info(message: string) {
     this.logger.info(message);
   }
+
+  static morganMiddleware(): any {
+    const logger : Logger = new WinstonLogger();
+    return MorganLogger.morganMiddleware(logger);
+  }
+
 }
 
 export default WinstonLogger;
