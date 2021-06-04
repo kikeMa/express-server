@@ -1,6 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
-const morgan = require("morgan");
+import swaggerUi from "swagger-ui-express";
+const swaggerSpec = require("./config/documentation");
 import compress from 'compression';
 import Router from 'express-promise-router';
 import { registerRoutes } from './routes';
@@ -17,6 +18,15 @@ app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({ action: 'deny' }));
+
+if (process.env.NODE_ENV === "dev") {
+
+    const options = {
+        customCss: '.swagger-ui .topbar { display: none }'
+    };
+    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, options));
+}
+
 app.use(compress());
 
 const router = Router();
