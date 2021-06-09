@@ -1,11 +1,11 @@
 import express from 'express';
 import helmet from 'helmet';
 import swaggerUi from "swagger-ui-express";
-const swaggerSpec = require("./config/documentation");
 import compress from 'compression';
 import Router from 'express-promise-router';
 import { registerRoutes } from './routes';
 import Logger from './shared/infrastructure/WinstonLogger';
+import SwaggerDoc from "./config/documentation";
 
 const app: express.Express = express();
 
@@ -20,11 +20,7 @@ app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({ action: 'deny' }));
 
 if (process.env.NODE_ENV === "dev") {
-
-    const options = {
-        customCss: '.swagger-ui .topbar { display: none }'
-    };
-    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, options));
+    app.use('/docs', swaggerUi.serve, SwaggerDoc.getSwaggerSetup());
 }
 
 app.use(compress());
