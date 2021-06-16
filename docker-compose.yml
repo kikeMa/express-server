@@ -12,7 +12,7 @@ x-app-service: &default-app
 
 services:
 
-  backend:
+  backend-planetdataset:
     <<: *default-app
     command: bash -c "npm run build && npm run build:tsc && npm run dev"
     ports:
