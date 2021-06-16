@@ -1,5 +1,5 @@
 import convictConfig from "../../config/config";
-import {UserToken} from "../../user/domain/UserToken";
+import {UserToken} from "../../users/domain/UserToken";
 const jwt = require("jsonwebtoken");
 
 
@@ -7,11 +7,11 @@ export class Token {
     readonly value: string;
 
     constructor(token: string) {
-        token = this.clearBearer(token);
+        token = Token.clearBearer(token);
         this.value = token;
     }
 
-    private clearBearer(token: string): string {
+    private static clearBearer(token: string): string {
         return token.replace("Bearer ","")
     }
 

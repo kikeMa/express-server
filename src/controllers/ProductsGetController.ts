@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
-import { SearchProduct } from '../product/application/SearchProduct';
-import { ProductNotExist } from '../product/domain/ProductNotExist';
-import { MongoProductRepository } from '../product/infrastructure/ProductRepository';
+import { SearchProduct } from '../products/application/SearchProduct';
+import { ProductNotExist } from '../products/domain/ProductNotExist';
+import { MongoProductRepository } from '../products/infrastructure/ProductRepository';
 import { MongoClientFactory } from '../shared/infrastructure/mongo/MongoClientFactory';
 import { Controller } from './Controller';
 

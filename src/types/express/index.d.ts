@@ -1,4 +1,4 @@
-import { UserToken } from "../../user/domain/UserToken";
+import { UserToken } from "../../users/domain/UserToken";
 
 
 declare global {

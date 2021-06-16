@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 // import { SearchProduct } from '../product/application/SearchProduct';
-import { Product } from '../product/domain/Product';
-import { Ingredients } from '../product/domain/Ingredients';
-import { ProductNotExist } from '../product/domain/ProductNotExist';
-import { MongoProductRepository } from '../product/infrastructure/ProductRepository';
+import { Product } from '../products/domain/Product';
+import { Ingredients } from '../products/domain/Ingredients';
+import { ProductNotExist } from '../products/domain/ProductNotExist';
+import { MongoProductRepository } from '../products/infrastructure/ProductRepository';
 import { Uuid } from '../shared/domain/value-object/Uuid';
 import { MongoClientFactory } from '../shared/infrastructure/mongo/MongoClientFactory';
 import { Controller } from './Controller';

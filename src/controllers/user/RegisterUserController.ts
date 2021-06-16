@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { MongoClientFactory } from '../../shared/infrastructure/mongo/MongoClientFactory';
-import { MongoUserRepository } from '../../user/infrastructure/UserRepository';
-import { LoginNotCorrect } from '../../user/domain/LoginNotCorrect';
+import { MongoUserRepository } from '../../users/infrastructure/UserRepository';
+import { LoginNotCorrect } from '../../users/domain/LoginNotCorrect';
 import { Controller } from '../Controller';
-import { SaveUser } from '../../user/application/SaveUser';
+import { SaveUser } from '../../users/application/SaveUser';
 
 export class RegisterUserController implements Controller {
   

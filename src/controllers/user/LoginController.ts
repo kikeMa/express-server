@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { MongoClientFactory } from '../../shared/infrastructure/mongo/MongoClientFactory';
-import { MongoUserRepository } from '../../user/infrastructure/UserRepository';
-import { LoginUser } from '../../user/application/LoginUser';
-import { LoginNotCorrect } from '../../user/domain/LoginNotCorrect';
+import { MongoUserRepository } from '../../users/infrastructure/UserRepository';
+import { LoginUser } from '../../users/application/LoginUser';
+import { LoginNotCorrect } from '../../users/domain/LoginNotCorrect';
 import { Controller } from '../Controller';
 
 export class LoginController implements Controller {

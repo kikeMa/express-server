@@ -1,7 +1,7 @@
 import { AuthValidation } from "../domain/AuthValidation";
 import { NextFunction, Request, Response } from 'express';
 import httpStatus from "http-status";
-import { UserToken } from "../../user/domain/UserToken";
+import { UserToken } from "../../users/domain/UserToken";
 import {Token} from "../domain/Token";
 
 class AuthValidationJWT implements AuthValidation {
